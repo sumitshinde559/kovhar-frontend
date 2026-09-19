@@ -37,7 +37,7 @@ function Navbar() {
 
         <NavLink to="/" className="flex items-center gap-2">
           <img
-            src="/src/assets/images/logo/KovharLogo.png"
+            src="images/KovharLogo.png"
             alt="KOVHAR Logo"
             className="h-10 w-auto"
           />
