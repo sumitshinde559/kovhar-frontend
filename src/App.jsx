@@ -12,7 +12,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
-import ProfilePage from "./pages/ProfilePage";
+import ProfilePage from "./pages/Profilepage";
 // import NotFound from "./pages/NotFound";
 
 function App() {
