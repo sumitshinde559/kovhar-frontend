@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-4">
               <img
-                src="/src/assets/images/logo/KovharLogo.png"
+                src="images/KovharLogo.png"
                 alt="KOVHAR"
                 className="h-14 w-14 rounded-xl object-contain"
               />
