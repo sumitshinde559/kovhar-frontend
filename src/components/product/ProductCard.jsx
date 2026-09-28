@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ShoppingBag } from "lucide-react";
 
 import WishlistButton from "./WishlistButton";
+import AppImage from "../common/AppImage";
 
 import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
@@ -43,12 +44,11 @@ export default function ProductCard({ product, fromWishlist = false }) {
       <div className="overflow-hidden rounded-3xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
         {/* Product Image */}
         <div className="relative aspect-square overflow-hidden bg-zinc-100">
-          <img
+          <AppImage
             src={product.images?.[0]}
             alt={product.name}
             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-            loading="lazy"
-            decoding="async"
+            skeletonClassName="h-full w-full"
           />
 
           {/* Wishlist */}

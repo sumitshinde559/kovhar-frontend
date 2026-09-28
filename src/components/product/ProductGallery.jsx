@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AppImage from "../common/AppImage";
 
 export default function ProductGallery({ images }) {
   // const gallery = [images?.top, images?.side, images?.front].filter(Boolean);
@@ -26,12 +27,11 @@ export default function ProductGallery({ images }) {
               selectedImage === image ? "border-amber-500" : "border-zinc-200"
             }`}
           >
-            <img
+            <AppImage
               src={image}
               alt={`Product view ${index + 1}`}
-              className="h-24 w-24 bg-white object-contain p-2"
-              loading="lazy"
-              decoding="async"
+              className="h-24 w-24 object-contain p-2"
+              skeletonClassName="h-24 w-24"
             />
           </button>
         ))}
@@ -39,12 +39,13 @@ export default function ProductGallery({ images }) {
 
       {/* Main Image */}
       <div className="group flex-1 overflow-hidden rounded-3xl border bg-white">
-        <img
+        <AppImage
           src={selectedImage}
           alt="Selected product view"
           className="w-full object-contain p-12 transition duration-500 group-hover:scale-110"
+          skeletonClassName="w-full aspect-square"
+          loading="eager"
           fetchpriority="high"
-          decoding="async"
         />
       </div>
     </div>

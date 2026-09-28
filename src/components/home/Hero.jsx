@@ -1,6 +1,7 @@
 import heroImage from "../../assets/images/Hero.png";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import AppImage from "../common/AppImage";
 
 function Hero() {
   const navigate = useNavigate();
@@ -9,12 +10,13 @@ function Hero() {
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:h-[700px] rounded-3xl overflow-hidden bg-gradient-to-br from-[#E8D8C4] via-[#F3E4D2] to-[#EAD6BE] shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
         {/* Image: on top for mobile, right side on desktop */}
         <div className="order-first lg:order-last h-72 sm:h-96 lg:h-full">
-          <img
+          <AppImage
             src={heroImage}
             alt="Handcrafted Kolhapuri Chappals"
             className="h-full w-full object-cover"
+            skeletonClassName="h-full w-full"
+            loading="eager"
             fetchpriority="high"
-            decoding="async"
           />
         </div>
 

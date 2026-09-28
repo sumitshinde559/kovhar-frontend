@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { MapPin, Plus, CheckCircle, Loader2, PackageCheck } from "lucide-react";
 import { notify } from "../utils/toast";
 import { FREE_SHIPPING_THRESHOLD, SHIPPING_COST } from "../utils/constants";
+import AppImage from "../components/common/AppImage";
 import { useCart } from "../context/CartContext";
 import { useAddress } from "../context/AddressContext";
 import AddressForm from "../components/address/AddressForm";
@@ -241,12 +242,11 @@ export default function CheckoutPage() {
                       key={`${item._id}-${item.selectedSize}`}
                       className="flex gap-5 border-b border-zinc-100 pb-5 last:border-0 last:pb-0"
                     >
-                      <img
+                      <AppImage
                         src={item.images?.[0]}
                         alt={item.name}
                         className="h-24 w-24 rounded-2xl object-cover"
-                        loading="lazy"
-                        decoding="async"
+                        skeletonClassName="h-24 w-24 rounded-2xl"
                       />
 
                       <div className="flex-1">

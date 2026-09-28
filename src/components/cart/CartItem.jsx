@@ -1,5 +1,6 @@
 import { Trash2, Heart } from "lucide-react";
 import { toast } from "react-hot-toast";
+import AppImage from "../common/AppImage";
 
 import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
@@ -60,12 +61,11 @@ export default function CartItem({ product }) {
       {/* Image */}
 
       <div className="h-44 w-44 shrink-0 overflow-hidden rounded-2xl border bg-white">
-        <img
+        <AppImage
           src={product.images?.[0]}
           alt={product.name}
           className="h-full w-full object-contain"
-          loading="lazy"
-          decoding="async"
+          skeletonClassName="h-full w-full"
         />
       </div>
 

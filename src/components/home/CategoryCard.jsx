@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import AppImage from "../common/AppImage";
 
 function CategoryCard({ category }) {
   const { name, image, slug } = category;
@@ -8,12 +9,11 @@ function CategoryCard({ category }) {
     <Link to={`/products?category=${slug}`} className="group block">
       <div className="relative h-[450px] overflow-hidden rounded-3xl shadow-lg">
         {/* Category Image */}
-        <img
+        <AppImage
           src={image}
           alt={name}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-          loading="lazy"
-          decoding="async"
+          skeletonClassName="h-full w-full"
         />
 
         {/* Dark Overlay */}

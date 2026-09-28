@@ -18,6 +18,7 @@ import {
 import { useAddress } from "../context/AddressContext";
 import { useWishlist } from "../context/WishlistContext";
 import AddressForm from "../components/address/AddressForm";
+import AppImage from "../components/common/AppImage";
 import { notify } from "../utils/toast";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
@@ -328,12 +329,11 @@ export default function ProfilePage() {
                       >
                         <div className="h-20 w-20 overflow-hidden rounded-xl bg-stone-50">
                           {item.image ? (
-                            <img
+                            <AppImage
                               src={item.image}
                               alt={item.name}
                               className="h-full w-full object-contain"
-                              loading="lazy"
-                              decoding="async"
+                              skeletonClassName="h-full w-full"
                             />
                           ) : (
                             <div className="flex h-full items-center justify-center">
