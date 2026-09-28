@@ -13,6 +13,12 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
 import ProfilePage from "./pages/ProfilePage";
+import NotFound from "./pages/NotFound";
+import TrackOrderPage from "./pages/TrackOrderPage";
+import ShippingPage from "./pages/ShippingPage";
+import ReturnsPage from "./pages/ReturnsPage";
+import FAQsPage from "./pages/FAQsPage";
+import SizeGuidePage from "./pages/SizeGuidePage";
 // import NotFound from "./pages/NotFound";
 
 function App() {
@@ -33,13 +39,18 @@ function App() {
           <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/track-order" element={<TrackOrderPage />} />
+          <Route path="/shipping" element={<ShippingPage />} />
+          <Route path="/returns" element={<ReturnsPage />} />
+          <Route path="/faqs" element={<FAQsPage />} />
+          <Route path="/size-guide" element={<SizeGuidePage />} />
 
           {/* Authentication */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
 
           {/* 404 */}
-          {/* <Route path="*" element={<NotFound />} /> */}
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>
