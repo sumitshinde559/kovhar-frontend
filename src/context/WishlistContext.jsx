@@ -5,6 +5,7 @@ import {
   useReducer,
   useState,
 } from "react";
+import { notify } from "../utils/toast";
 
 const WishlistContext = createContext();
 
@@ -130,6 +131,7 @@ export function WishlistProvider({ children }) {
       });
     } catch (error) {
       console.error("Add wishlist error:", error);
+      notify.error(error.message || "Failed to add to wishlist.");
     }
   };
 
@@ -171,6 +173,7 @@ export function WishlistProvider({ children }) {
       });
     } catch (error) {
       console.error("Remove from wishlist error:", error);
+      notify.error(error.message || "Failed to remove from wishlist.");
     }
   };
   /*

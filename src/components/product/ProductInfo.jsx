@@ -7,6 +7,7 @@ import {
   Hammer,
   Heart,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import QuantitySelector from "./QuantitySelector";
 
@@ -82,7 +83,7 @@ export default function ProductInfo({ product }) {
       <div className="mt-5 flex items-center gap-3">
         <div className="flex text-amber-500">
           {[...Array(5)].map((_, index) => (
-            <Star key={index} size={18} fill="currentColor" />
+            <Star key={`star-${index}`} size={18} fill="currentColor" />
           ))}
         </div>
 
@@ -119,12 +120,9 @@ export default function ProductInfo({ product }) {
         <div className="mb-4 flex items-center justify-between">
           <h3 className="text-lg font-semibold">Select Size</h3>
 
-          <button
-            type="button"
-            className="text-sm text-amber-600 hover:underline"
-          >
+          <Link to="/size-guide" className="text-sm text-amber-600 hover:underline">
             Size Guide
-          </button>
+          </Link>
         </div>
 
         <div className="flex flex-wrap gap-3">
@@ -181,8 +179,7 @@ export default function ProductInfo({ product }) {
 
         <div className="flex items-center gap-3">
           <RotateCcw size={20} className="text-purple-600" />
-          Easy {product.deliveryInfo?.returnDays}
-          Day Returns
+          Easy {product.deliveryInfo?.returnDays ?? 7}-Day Returns
         </div>
       </div>
 

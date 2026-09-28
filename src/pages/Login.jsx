@@ -29,6 +29,11 @@ export default function Login() {
       return;
     }
 
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      notify.error?.("Please enter a valid email address.");
+      return;
+    }
+
     try {
       setLoading(true);
 

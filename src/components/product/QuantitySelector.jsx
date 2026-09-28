@@ -11,7 +11,7 @@ export default function QuantitySelector({ quantity, setQuantity }) {
 
   return (
     <div className="flex w-fit items-center overflow-hidden rounded-xl border border-zinc-300">
-      <button onClick={decrease} className="p-4 transition hover:bg-zinc-100">
+      <button type="button" onClick={decrease} className="p-4 transition hover:bg-zinc-100">
         <Minus size={18} />
       </button>
 
@@ -19,7 +19,7 @@ export default function QuantitySelector({ quantity, setQuantity }) {
         {quantity}
       </div>
 
-      <button onClick={increase} className="p-4 transition hover:bg-zinc-100">
+      <button type="button" onClick={increase} className="p-4 transition hover:bg-zinc-100">
         <Plus size={18} />
       </button>
     </div>

@@ -19,7 +19,8 @@ export default function ProductGallery({ images }) {
       <div className="order-2 flex gap-4 lg:order-1 lg:flex-col">
         {gallery.map((image, index) => (
           <button
-            key={index}
+            key={image}
+            type="button"
             onClick={() => setSelectedImage(image)}
             className={`overflow-hidden rounded-2xl border-2 transition ${
               selectedImage === image ? "border-amber-500" : "border-zinc-200"
@@ -27,7 +28,7 @@ export default function ProductGallery({ images }) {
           >
             <img
               src={image}
-              alt=""
+              alt={`Product view ${index + 1}`}
               className="h-24 w-24 bg-white object-contain p-2"
             />
           </button>
@@ -38,7 +39,7 @@ export default function ProductGallery({ images }) {
       <div className="group flex-1 overflow-hidden rounded-3xl border bg-white">
         <img
           src={selectedImage}
-          alt=""
+          alt="Selected product view"
           className="w-full object-contain p-12 transition duration-500 group-hover:scale-110"
         />
       </div>

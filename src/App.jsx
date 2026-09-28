@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Layout from "./components/layout/Layout";
+import ProtectedRoute from "./components/common/ProtectedRoute";
 
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
@@ -19,7 +20,6 @@ import ShippingPage from "./pages/ShippingPage";
 import ReturnsPage from "./pages/ReturnsPage";
 import FAQsPage from "./pages/FAQsPage";
 import SizeGuidePage from "./pages/SizeGuidePage";
-// import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -34,12 +34,15 @@ function App() {
           {/* Product Details */}
           <Route path="/products/:slug" element={<ProductDetails />} />
 
-          {/* Future Routes */}
           <Route path="/cart" element={<CartPage />} />
           <Route path="/wishlist" element={<WishlistPage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/track-order" element={<TrackOrderPage />} />
+
+          {/* Protected: require login */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/track-order" element={<TrackOrderPage />} />
+          </Route>
           <Route path="/shipping" element={<ShippingPage />} />
           <Route path="/returns" element={<ReturnsPage />} />
           <Route path="/faqs" element={<FAQsPage />} />

@@ -1,4 +1,4 @@
-import { Search, Heart, ShoppingBag, User } from "lucide-react";
+import { Heart, ShoppingBag, User } from "lucide-react";
 
 import menCategoryImage from "../assets/images/categories/men.png";
 import womenCategoryImage from "../assets/images/categories/women.png";
@@ -77,3 +77,6 @@ export const SORT_OPTIONS = {
   PRICE_HIGH_LOW: "price-desc",
   RATING: "rating",
 };
+
+export const FREE_SHIPPING_THRESHOLD = 1999;
+export const SHIPPING_COST = 199;

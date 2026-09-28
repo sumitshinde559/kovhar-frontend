@@ -19,5 +19,10 @@ export async function getProductBySlug(slug) {
   }
 
   const data = await response.json();
+
+  if (!data.product) {
+    throw new Error("Product not found.");
+  }
+
   return data.product;
 }

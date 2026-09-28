@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Plus, CheckCircle, Loader2, PackageCheck } from "lucide-react";
 import { notify } from "../utils/toast";
+import { FREE_SHIPPING_THRESHOLD, SHIPPING_COST } from "../utils/constants";
 import { useCart } from "../context/CartContext";
 import { useAddress } from "../context/AddressContext";
 import AddressForm from "../components/address/AddressForm";
@@ -23,7 +24,7 @@ export default function CheckoutPage() {
     0,
   );
 
-  const shipping = subtotal > 1999 ? 0 : 199;
+  const shipping = subtotal > FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
   const total = subtotal + shipping;
 
   const handlePlaceOrder = async () => {
@@ -87,7 +88,6 @@ export default function CheckoutPage() {
 
       notify.orderPlaced();
 
-      console.log("Order created:", data.order);
     } catch (error) {
       console.error("Place order error:", error);
 

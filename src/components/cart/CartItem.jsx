@@ -48,9 +48,9 @@ export default function CartItem({ product }) {
   };
 
   const handleSizeChange = (event) => {
-    const newSize = Number(event.target.value);
+    const newSize = String(event.target.value);
 
-    updateSize(product._id, product.selectedSize, newSize);
+    updateSize(product._id, String(product.selectedSize), newSize);
 
     toast.success("Size updated");
   };

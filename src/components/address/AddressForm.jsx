@@ -29,7 +29,17 @@ export default function AddressForm({ onSuccess }) {
     const isEmpty = Object.values(form).some((value) => !value.trim());
 
     if (isEmpty) {
-      alert("Please fill in all address details.");
+      notify.error("Please fill in all address details.");
+      return;
+    }
+
+    if (!/^\d{10}$/.test(form.phone.trim())) {
+      notify.error("Please enter a valid 10-digit phone number.");
+      return;
+    }
+
+    if (!/^\d{6}$/.test(form.postcode.trim())) {
+      notify.error("Please enter a valid 6-digit postcode.");
       return;
     }
 

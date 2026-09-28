@@ -40,7 +40,7 @@ export default function ProductFilters({ products, highestPrice }) {
   const sizes = useMemo(
     () =>
       [
-        ...new Set(products.flatMap((p) => p.sizes.map((s) => Number(s.size)))),
+        ...new Set(products.flatMap((p) => p.sizes?.map((s) => Number(s.size)) ?? [])),
       ].sort((a, b) => a - b),
     [products],
   );
@@ -91,6 +91,7 @@ export default function ProductFilters({ products, highestPrice }) {
         <h2 className="text-2xl font-bold">Filters</h2>
 
         <button
+          type="button"
           onClick={clearFilters}
           className="text-sm font-medium text-amber-600 hover:underline"
         >

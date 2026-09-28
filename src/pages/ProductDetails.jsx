@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 
 import ProductGallery from "../components/product/ProductGallery";
@@ -64,9 +64,6 @@ export default function ProductDetails() {
     );
   }
 
-  if (product) {
-    console.log("IMAGES-", product.images);
-  }
   if (!product) {
     return (
       <div className="mx-auto flex min-h-[60vh] max-w-7xl items-center justify-center">
@@ -80,7 +77,7 @@ export default function ProductDetails() {
       {/* Breadcrumb */}
       <section className="border-b border-zinc-200">
         <div className="mx-auto flex max-w-7xl items-center gap-2 px-6 py-5 text-sm text-zinc-500">
-          <span>Home</span>
+          <Link to="/" className="hover:text-zinc-800">Home</Link>
 
           <ChevronRight size={16} />
 

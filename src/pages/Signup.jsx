@@ -31,11 +31,22 @@ export default function Signup() {
       form.firstName,
       form.lastName,
       form.email,
+      form.phone,
       form.password,
     ];
 
     if (requiredFields.some((value) => !value.trim())) {
       notify.error?.("Please fill in all required fields.");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      notify.error?.("Please enter a valid email address.");
+      return;
+    }
+
+    if (!/^\d{10}$/.test(form.phone.trim())) {
+      notify.error?.("Please enter a valid 10-digit phone number.");
       return;
     }
 

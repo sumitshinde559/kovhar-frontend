@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ShieldCheck, Truck, RotateCcw } from "lucide-react";
+import { FREE_SHIPPING_THRESHOLD, SHIPPING_COST } from "../../utils/constants";
 
 export default function CartSummary({ cart }) {
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
@@ -16,7 +17,7 @@ export default function CartSummary({ cart }) {
 
   const discount = mrp - sellingPrice;
 
-  const shipping = sellingPrice > 1999 ? 0 : 199;
+  const shipping = sellingPrice > FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
 
   const grandTotal = sellingPrice + shipping;
 

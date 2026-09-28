@@ -54,7 +54,7 @@ function SizeTable({ headers, rows }) {
         <tbody>
           {rows.map((row, i) => (
             <tr
-              key={i}
+              key={row[0]}
               className={`border-t border-zinc-100 ${
                 i % 2 === 0 ? "bg-white" : "bg-zinc-50/50"
               }`}
