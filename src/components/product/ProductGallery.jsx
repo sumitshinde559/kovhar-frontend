@@ -30,6 +30,8 @@ export default function ProductGallery({ images }) {
               src={image}
               alt={`Product view ${index + 1}`}
               className="h-24 w-24 bg-white object-contain p-2"
+              loading="lazy"
+              decoding="async"
             />
           </button>
         ))}
@@ -41,6 +43,8 @@ export default function ProductGallery({ images }) {
           src={selectedImage}
           alt="Selected product view"
           className="w-full object-contain p-12 transition duration-500 group-hover:scale-110"
+          fetchpriority="high"
+          decoding="async"
         />
       </div>
     </div>

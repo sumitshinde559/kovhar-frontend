@@ -13,6 +13,8 @@ function Hero() {
             src={heroImage}
             alt="Handcrafted Kolhapuri Chappals"
             className="h-full w-full object-cover"
+            fetchpriority="high"
+            decoding="async"
           />
         </div>
 

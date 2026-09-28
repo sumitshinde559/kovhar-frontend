@@ -47,6 +47,8 @@ export default function ProductCard({ product, fromWishlist = false }) {
             src={product.images?.[0]}
             alt={product.name}
             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+            loading="lazy"
+            decoding="async"
           />
 
           {/* Wishlist */}

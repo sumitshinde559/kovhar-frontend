@@ -64,6 +64,8 @@ export default function CartItem({ product }) {
           src={product.images?.[0]}
           alt={product.name}
           className="h-full w-full object-contain"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 

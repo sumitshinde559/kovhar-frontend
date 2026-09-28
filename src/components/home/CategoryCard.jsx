@@ -12,6 +12,8 @@ function CategoryCard({ category }) {
           src={image}
           alt={name}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          loading="lazy"
+          decoding="async"
         />
 
         {/* Dark Overlay */}

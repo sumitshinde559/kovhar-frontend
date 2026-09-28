@@ -73,6 +73,8 @@ export default function Footer() {
                 src="/images/KovharLogo.png"
                 alt="KOVHAR"
                 className="h-12 w-12 rounded-xl object-contain md:h-14 md:w-14"
+                loading="lazy"
+                decoding="async"
               />
 
               <span className="text-3xl font-bold tracking-wide text-white md:text-4xl">

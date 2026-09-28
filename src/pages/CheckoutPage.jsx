@@ -245,6 +245,8 @@ export default function CheckoutPage() {
                         src={item.images?.[0]}
                         alt={item.name}
                         className="h-24 w-24 rounded-2xl object-cover"
+                        loading="lazy"
+                        decoding="async"
                       />
 
                       <div className="flex-1">

@@ -332,6 +332,8 @@ export default function ProfilePage() {
                               src={item.image}
                               alt={item.name}
                               className="h-full w-full object-contain"
+                              loading="lazy"
+                              decoding="async"
                             />
                           ) : (
                             <div className="flex h-full items-center justify-center">
