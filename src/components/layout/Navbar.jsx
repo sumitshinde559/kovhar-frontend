@@ -81,21 +81,12 @@ function Navbar() {
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-20">
         {/* Logo */}
 
-<<<<<<< HEAD
-        <NavLink to="/" className="flex items-center gap-2">
-          <img
-            src="images/KovharLogo.png"
-            alt="KOVHAR Logo"
-            className="h-10 w-auto"
-          />
-=======
         <NavLink
           to="/"
           onClick={() => setMenuOpen(false)}
           className="flex shrink-0 items-center gap-2"
         >
           <img src={logo} alt="KOVHAR Logo" className="h-9 w-auto lg:h-10" />
->>>>>>> 75bb8b6 (Fix UI rendering issues and logical error using Claude)
 
           <span className="text-xl font-bold tracking-wider sm:tracking-widest lg:text-2xl">
             KOVHAR
